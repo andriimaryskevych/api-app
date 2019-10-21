@@ -1,6 +1,8 @@
 <template>
     <div class="home">
-        <span>Image Picker</span>
+        <img src="../assets/logo1.png" alt="">
+        <img src="../assets/logo2.png" alt="">
+        <img src="../assets/logo3.png" alt="">
     </div>
 </template>
 
