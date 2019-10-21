@@ -6,6 +6,11 @@
 
 <script>
 export default {
-    name: 'Form'
+    name: 'Form',
+    data () {
+        return {
+            data: 2
+        }
+    }
 }
 </script>

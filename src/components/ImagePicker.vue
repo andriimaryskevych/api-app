@@ -8,6 +8,11 @@
 
 <script>
 export default {
-    name: 'ImagePicker'
+    name: 'ImagePicker',
+    data () {
+        return {
+            data: 1
+        }
+    }
 }
 </script>

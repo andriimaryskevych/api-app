@@ -9,12 +9,12 @@
         <tab-content title="Select image"
                      :before-change="validateFirstStep"
                      icon="ti-user">
-            <ImagePicker />
+            <ImagePicker ref='imagePicker' />
         </tab-content>
         <tab-content title="Fill in form data"
                      :before-change="validateSecondStep"
                      icon="ti-check">
-            <Form />
+            <Form ref='mainForm' />
         </tab-content>
 
         <div class="loader" v-if="loadingWizard"></div>
@@ -52,11 +52,13 @@ export default {
             alert('Yay. Done!')
         },
         validateFirstStep (data) {
-            console.log(data)
+            console.log(this.$refs.imagePicker.data)
 
             return true
         },
         validateSecondStep () {
+            console.log(this.$refs.mainForm.data)
+
             return true
         }
 
