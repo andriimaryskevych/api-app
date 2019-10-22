@@ -43,6 +43,7 @@ export default {
             count: 0,
             formData: {
                 imageId: null,
+                email: '',
                 name: ''
             }
         }
@@ -53,7 +54,7 @@ export default {
     },
     methods: {
         onComplete () {
-            alert('Yay. Done!')
+            alert(JSON.stringify(this.formData))
         },
         validateFirstStep (data) {
             const stepData = this.$refs.imagePicker.selectedImageId
@@ -70,7 +71,10 @@ export default {
             return true
         },
         validateSecondStep () {
-            console.log(this.$refs.mainForm.data)
+            const { email, name } = this.$refs.mainForm.form
+
+            this.formData.email = email
+            this.formData.name = name
 
             return true
         }
