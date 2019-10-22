@@ -40,7 +40,11 @@ export default {
         return {
             loadingWizard: false,
             errorMsg: null,
-            count: 0
+            count: 0,
+            formData: {
+                imageId: null,
+                name: ''
+            }
         }
     },
     components: {
@@ -52,7 +56,16 @@ export default {
             alert('Yay. Done!')
         },
         validateFirstStep (data) {
-            console.log(this.$refs.imagePicker.data)
+            const stepData = this.$refs.imagePicker.selectedImageId
+
+            if (!stepData) {
+                this.errorMsg = 'Select image, please'
+
+                return false
+            }
+
+            this.errorMsg = ''
+            this.formData.imageId = stepData
 
             return true
         },
