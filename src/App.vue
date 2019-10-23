@@ -1,7 +1,9 @@
 <template>
     <div id="app">
-        <Controller />
-        <Dasboard />
+        <div class='app-container'>
+            <Controller />
+            <Dasboard />
+        </div>
         <Loading />
     </div>
 </template>

@@ -4,6 +4,8 @@ import * as types from './action-types'
 
 Vue.use(Vuex)
 
+const dashboardUrl = 'https://public.tableau.com/shared/C9GJC4YG2?:embed=y&:showVizHome=no&:host_url=https%3A%2F%2Fpublic.tableau.com%2F&:embed_code_version=3&:toolbar=yes&:animate_transition=yes&:display_static_image=no&:display_spinner=no&:display_overlay=yes&:display_count=yes&:loadOrderID=0'
+
 export default new Vuex.Store({
     state: {
         formData: {
@@ -60,7 +62,7 @@ export default new Vuex.Store({
             commit(types.FETCH_DASHBOARD_LOADING)
 
             setTimeout(() => {
-                commit(types.FETCH_DASHBOARD_SUCCESS, { url: 'https://www.google.com.ua' })
+                commit(types.FETCH_DASHBOARD_SUCCESS, { url: dashboardUrl })
             }, 2000)
         }
     }

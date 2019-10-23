@@ -1,3 +1,22 @@
 * {
     box-sizing: border-box;
 }
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.wizard-header {
+    display: none;
+}
+
+.dashboard-container {
+    flex: 1;
+}
+
+.dashboard-container iframe {
+    width: 70%;
+    height: 100%;
+}
