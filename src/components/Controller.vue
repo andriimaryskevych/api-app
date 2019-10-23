@@ -71,10 +71,11 @@ export default {
             return true
         },
         validateSecondStep () {
-            const { email, name } = this.$refs.mainForm.form
+            const { url, username, password } = this.$refs.mainForm.form
 
-            this.formData.email = email
-            this.formData.name = name
+            this.formData.url = url
+            this.formData.username = username
+            this.formData.password = password
 
             return true
         }
