@@ -2,18 +2,21 @@
     <div id="app">
         <Controller />
         <Dasboard />
+        <Loading />
     </div>
 </template>
 
 <script>
 import Controller from './components/Controller'
 import Dasboard from './components/Dashboard'
+import Loading from './components/Loading'
 
 export default {
     name: 'App',
     components: {
         Controller,
-        Dasboard
+        Dasboard,
+        Loading
     }
 }
 </script>
