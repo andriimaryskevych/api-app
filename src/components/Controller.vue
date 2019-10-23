@@ -62,7 +62,7 @@ export default {
         onComplete () {
             console.log(this.formData)
         },
-        validateFirstStep (data) {
+        validateFirstStep () {
             const stepData = this.$refs.imagePicker.selectedImageId
 
             if (!stepData) {
