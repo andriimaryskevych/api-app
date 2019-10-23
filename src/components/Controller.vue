@@ -32,8 +32,10 @@ span.error{
 }
 </style>
 <script>
+import { mapActions } from 'vuex'
 import ImagePicker from './ImagePicker'
 import Form from './Form'
+import * as types from '../action-types'
 
 export default {
     data () {
@@ -43,8 +45,9 @@ export default {
             count: 0,
             formData: {
                 imageId: null,
-                email: '',
-                name: ''
+                url: '',
+                username: '',
+                password: ''
             }
         }
     },
@@ -53,8 +56,11 @@ export default {
         Form
     },
     methods: {
+        ...mapActions({
+            fetchDashboard: types.FETCH_DASHBOARD_REQUEST
+        }),
         onComplete () {
-            alert(JSON.stringify(this.formData))
+            console.log(this.formData)
         },
         validateFirstStep (data) {
             const stepData = this.$refs.imagePicker.selectedImageId
