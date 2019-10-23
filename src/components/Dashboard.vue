@@ -13,7 +13,7 @@ import { mapState } from 'vuex'
 export default {
     computed: {
         ...mapState({
-            iframeUrl: state => state.dashboard.data.url
+            iframeUrl: state => state.dashboard.data && state.dashboard.data.url
         })
     }
 }
