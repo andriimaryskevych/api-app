@@ -1,6 +1,9 @@
 <template>
     <div class="dashboard-container">
-        <iframe v-if="iframeUrl" :src="iframeUrl" frameborder="0"></iframe>
+        <router-link to="/" class="back-link">Go back</router-link>
+        <div class="dashboard-iframe">
+            <iframe v-if="iframeUrl" :src="iframeUrl" frameborder="0"></iframe>
+        </div>
     </div>
 </template>
 
@@ -8,26 +11,17 @@
 import { mapState } from 'vuex'
 
 export default {
-    data () {
-        return {
-            iframeUrl: ''
-        }
-    },
-    watch: {
-        dashboard (newVal) {
-            console.log(newVal)
-
-            if (newVal && newVal.data && newVal.data.url) {
-                this.iframeUrl = newVal.data.url
-            } else {
-                this.iframeUrl = ''
-            }
-        }
-    },
     computed: {
         ...mapState({
-            dashboard: state => state.dashboard
+            iframeUrl: state => state.dashboard.data.url
         })
     }
 }
 </script>
+
+<style lang="scss">
+.back-link {
+    color: green;
+    position: fixed;
+}
+</style>

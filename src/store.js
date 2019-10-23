@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import router from './router'
 import * as types from './action-types'
 
 Vue.use(Vuex)
@@ -63,6 +64,8 @@ export default new Vuex.Store({
 
             setTimeout(() => {
                 commit(types.FETCH_DASHBOARD_SUCCESS, { url: dashboardUrl })
+
+                router.push('dashboard')
             }, 2000)
         }
     }

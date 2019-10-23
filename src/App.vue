@@ -1,23 +1,18 @@
 <template>
     <div id="app">
         <div class='app-container'>
-            <Controller />
-            <Dasboard />
+            <router-view />
         </div>
         <Loading />
     </div>
 </template>
 
 <script>
-import Controller from './components/Controller'
-import Dasboard from './components/Dashboard'
 import Loading from './components/Loading'
 
 export default {
     name: 'App',
     components: {
-        Controller,
-        Dasboard,
         Loading
     }
 }
