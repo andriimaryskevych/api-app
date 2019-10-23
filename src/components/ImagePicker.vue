@@ -46,7 +46,6 @@ export default {
 
         &.selected {
             border-color: green;
-            padding: 20px;
         }
     }
 }

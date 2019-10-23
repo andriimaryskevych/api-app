@@ -12,6 +12,10 @@
     display: none;
 }
 
+.image-form-container img {
+    width: 200px;
+}
+
 .dashboard-container {
     flex: 1;
 }
