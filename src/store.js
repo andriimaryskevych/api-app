@@ -30,24 +30,24 @@ export default new Vuex.Store({
         }
     },
     mutations: {
-        [types.FETCH_DASHBOARD_LOADING] () {
-            this.dashboard = {
+        [types.FETCH_DASHBOARD_LOADING] (state) {
+            state.dashboard = {
                 data: null,
                 loading: true,
                 error: false,
                 errorMessage: ''
             }
         },
-        [types.FETCH_DASHBOARD_SUCCESS] (data) {
-            this.dashboard = {
+        [types.FETCH_DASHBOARD_SUCCESS] (state, data) {
+            state.dashboard = {
                 data,
                 loading: false,
                 error: false,
                 errorMessage: ''
             }
         },
-        [types.FETCH_DASHBOARD_FAILURE] (errorMessage) {
-            this.dashboard = {
+        [types.FETCH_DASHBOARD_FAILURE] (state, errorMessage) {
+            state.dashboard = {
                 data: null,
                 loading: false,
                 error: true,

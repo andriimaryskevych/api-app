@@ -60,7 +60,7 @@ export default {
             fetchDashboard: types.FETCH_DASHBOARD_REQUEST
         }),
         onComplete () {
-            console.log(this.formData)
+            this.fetchDashboard(this.formData)
         },
         validateFirstStep () {
             const stepData = this.$refs.imagePicker.selectedImageId
